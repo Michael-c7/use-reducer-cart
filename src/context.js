@@ -29,6 +29,24 @@ const AppProvider = (props) => {
     }
 
 
+    const increaseItemAmount = id => {
+        dispatch({type:"INCREASE_ITEM_AMOUNT", payload:id})
+    }
+
+    const decreaseItemAmount = id => {
+        dispatch({type:"DECREASE_ITEM_AMOUNT", payload:id})
+    }
+
+
+    const removeItem = id => {
+        dispatch({type:"REMOVE_ITEM", payload:id})
+    }
+
+    const calculateTotal = _ => {
+        dispatch({type:"CALCULATE_TOTAL"})
+    }
+
+
 
 
     return (
@@ -36,6 +54,10 @@ const AppProvider = (props) => {
             {...state,
             myTest,
             clearCart,
+            increaseItemAmount,
+            decreaseItemAmount,
+            removeItem,
+            calculateTotal,
             }
             }>
             {/*Need to render the children*/}

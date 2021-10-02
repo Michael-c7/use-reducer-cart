@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BagHeading from './BagHeading'
 import BagItems from './BagItems'
 import BagTotal from './BagTotal'
@@ -7,7 +7,13 @@ import ClearBag from './ClearBag'
 import { AppContext } from './context'
 
 const Bag = () => {
-    const {cart} = React.useContext(AppContext)
+    const {cart, calculateTotal} = React.useContext(AppContext)
+
+
+    useEffect(() => {
+        calculateTotal()
+    }, [cart])
+
     return (
         <section className="bag">
             <BagHeading/>

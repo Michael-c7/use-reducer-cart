@@ -5,14 +5,7 @@ import Bag from "./Bag"
 
 
 
-
-
-
-
 const App = () => {
-  
-  
-
   // const thingFromContext = useContext(AppContext)
 
   return (
